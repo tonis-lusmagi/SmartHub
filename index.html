@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SmartHub VM</title>
+    <title>SmartHub</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,6 +23,67 @@
     <!-- Custom styles for this template -->
     <link href="css/agency.css" rel="stylesheet">
 
+    <BODY ONLOAD="doCookie()"></BODY>
+
+    <SCRIPT>
+     var clicks = 0;
+     function myFunction() {
+        clicks += 1;
+        document.getElementById("demo").innerHTML = clicks;
+     }
+
+        cookieName = "Counter";
+        function doCookie() {
+        
+          var today = new Date()
+          var expires = new Date()
+          // valid for 1 year
+          expires.setTime(today.getTime() + 24*365*3600000)
+        
+          if (document.cookie) {
+             index = document.cookie.indexOf(cookieName);
+             } 
+           else { 
+             index = -1;
+             }
+          if (index == -1) {
+             document.cookie=cookieName+"=1; " + 
+                   " expires=" + expires.toGMTString() ;
+             } 
+          else {
+             countbegin = (document.cookie.indexOf("=", index) + 1);
+             countend = document.cookie.indexOf(";", index);
+             if (countend == -1) {
+                countend = document.cookie.length;
+                }
+             count = eval(document.cookie.substring(countbegin, countend)) + 1;
+             document.cookie=cookieName+"="+count+"; " +
+                   " expires=" + expires.toGMTString();
+        
+             }
+          }
+        
+        function getTimes() {
+          count=0;
+          if(document.cookie) {
+            index = document.cookie.indexOf(cookieName);
+            if (index != -1) {
+               countbegin = (document.cookie.indexOf("=", index) + 1);
+               countend = document.cookie.indexOf(";", index);
+               if (countend == -1) {
+                  countend = document.cookie.length;
+                  }
+               count = document.cookie.substring(countbegin, countend);
+               }
+            }
+          return(count);
+          }
+        document.write("You have accessed this page <b>"+getTimes()+"</b> times.");
+        
+        if (getTimes()==0) {
+           document.write("Welcome! This is your first time here");
+           } 
+        </SCRIPT>
   </head>
 
   <body id="page-top">
@@ -30,7 +91,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">SmartHub VM</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">SmartHub</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -62,9 +123,10 @@
       <div class="container">
         <div class="intro-text">
           <div class="intro-lead-in">Next gen vending machines</div>
-          <div class="intro-heading text-uppercase">SmartHub VM</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">👍</a>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">👎</a>
+          <div class="intro-heading text-uppercase">SmartHub</div>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" onclick="myFunction()">Like</a>
+          <p id="demo"></p>
+
         </div>
       </div>
     </header>
