@@ -77,7 +77,14 @@
                }
             }
           return(count);
-          }/*
+          }
+/*
+          if (id="demo" == 1) {
+            document.write("You have accessed this pagetimes.");
+          }
+          
+          /*
+          
         document.write("You have accessed this page <b>"+getTimes()+"</b> times.");
         
         if (getTimes()==0) {
@@ -125,7 +132,7 @@
           <div class="intro-lead-in">Next gen vending machines</div>
           <div class="intro-heading text-uppercase">SmartHub</div>
           <a class="btn btn-primary btn-xl text-uppercase" onclick="myFunction()">Like</a>
-          <p id="demo">0</p>
+          <p id="demo">0</p> <!-- replace 0 with existing likes from server -->
         </div>
       </div>
     </header>
@@ -272,7 +279,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Get Notified</h2>
-            <h3 class="section-subheading text-muted">Leave us your email and we will keep you updated with SmartHub</h3>
+            <h3 class="section-subheading text-muted">Leave us your email and we will keep you updated about SmartHub</h3>
           </div>
         </div>
         <!--<div class="row">
