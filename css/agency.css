@@ -299,7 +299,7 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-  height: 1090px; /* fixed size to not jump because loading counter */
+  height: 1090px;  /*fixed size to not jump because loading counter */
 }
 
 header.masthead .intro-text {
