@@ -58,6 +58,7 @@
       }
 */
 
+
       //FIXME
       function countFunction(mode) {
         if (getStoredValue('myPageMode')) {
