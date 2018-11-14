@@ -20,7 +20,7 @@
 
       //optimize this fn
       function retrieveValues() { //load current counter value into HTML and 'disable' button when allready clicked on previous session
-        var trigger = false;
+      /*  var trigger = false;
        
         document.getElementById("counter").innerHTML = clicks;
         if (getStoredValue('myPageMode')) {
@@ -33,12 +33,52 @@
                 $('.btn-like-3').removeClass('btn-like-3');
                 $(this).addClass('btn-like-3-clicked');
             });
-        }
+        }*/
       }
       function clr() {
         localStorage.removeItem("myPageMode");
       }
       
+
+
+
+      window.addEventListener('load', function() {
+          console.log('doc onload');
+          getCount().then(function(count) {
+            document.getElementById('counter').innerHTML = count;
+          });
+      });
+
+
+      function getCount() {
+        return new Promise(function(resolve, reject) {
+
+           $.get('/likecount', function(result) {
+
+            var count = JSON.parse(result).count;
+            console.log('getCount:', count);
+            resolve(count);
+          });
+        });
+      }
+
+
+      function makeLikeRequest()
+      {
+        $.post('/like', function(data) {
+          var count = JSON.parse(data).count;
+
+          $('#counter').html(count);
+        });
+
+        // post to server
+
+
+        // server responds with total like count
+
+
+
+      }
 
 
  /*
@@ -57,6 +97,9 @@
         }
       }
 */
+
+
+
 
 
       //FIXME
