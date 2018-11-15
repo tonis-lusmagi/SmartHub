@@ -1,4 +1,3 @@
-
 const express = require('express');
 const path = require('path');
 
@@ -46,5 +45,4 @@ app.get('/likecount', (req, res) => {
 });
 
 
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`SmartHub app listening on port ${port}!`))

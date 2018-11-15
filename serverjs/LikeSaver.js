@@ -1,4 +1,3 @@
-
 const crypto = require('crypto');
 
 const low = require('lowdb')
@@ -6,7 +5,6 @@ const FileSync = require('lowdb/adapters/FileSync')
 
 const adapter = new FileSync('db.json')
 const db = low(adapter)
-
 
 module.exports = class LikeSaver {
     sha1(str) {
@@ -21,24 +19,17 @@ module.exports = class LikeSaver {
         this.count = parseInt(db.get('count').value());
     }
 
-    async existsInDb(str) {
-        let value = db.get('likes')
+    async writeToDb(str) {
+
+        var hashValue = db.get('likes')
             .find({ hash: this.sha1(str) })
             .value();
 
-        return Promise.resolve(value);
-
-    }
-
-    async writeToDb(str) {
-
-     /*   let exists = await this.existsInDb(str);
-
-        if (exists) {
+        if (hashValue) {
+            console.log('Denied - hash allready exists');
             return Promise.resolve();
         }
-*/
-        // Add a like
+
         db.get('likes')
             .push({ hash: this.sha1(str) })
             .write();
