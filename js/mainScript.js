@@ -30,6 +30,7 @@ function buttonState() {
 
         $('.btn-like').toggleClass("btn-like btn-like-clicked");
         $(this).removeClass('btn-like-clicked');
+        toggle_visibility('afterLike');
         trigger = true;
 
     } else if (trigger == false) {
@@ -83,3 +84,20 @@ function makeLikeRequest() {
     mode = mode;
     storeValue('btnState', mode);
 }
+
+function toggle_visibility(id) {
+
+    if (getStoredValue('btnState')) {
+        var e = document.getElementById(id);
+        if (e.style.display == 'none')
+            e.style.display = 'none';
+        else
+            e.style.display = 'none';
+    }
+
+    var e = document.getElementById(id);
+    if (e.style.display == 'block')
+        e.style.display = 'none';
+    else
+        e.style.display = 'block';
+ }
