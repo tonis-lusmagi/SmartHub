@@ -254,7 +254,7 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-  height: 1080px;  /*fixed size to not jump because loading counter */
+  height: 1200px;  /*fixed size to not jump because loading counter */
 }
 
 header.masthead2 {
@@ -267,7 +267,7 @@ header.masthead2 {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-  height: 1080px;  /*fixed size to not jump because loading counter */
+  height: 1200px;  /*fixed size to not jump because loading counter */
 }
 
 header.masthead3 {
@@ -280,7 +280,7 @@ header.masthead3 {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-  height: 1080px;  /*fixed size to not jump because loading counter */
+  height: 1200px;  /*fixed size to not jump because loading counter */
 }
 
 header.masthead .intro-text {
@@ -331,7 +331,7 @@ header.masthead .intro-text .intro-heading {
 
 @media (min-width: 768px) {
   header.masthead .intro-text {
-    padding-top: 285px;
+    padding-top: 275px;
     padding-bottom: 200px;
   }
   header.masthead .intro-text .intro-lead-in {
