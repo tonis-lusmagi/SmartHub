@@ -315,6 +315,7 @@ header.masthead .intro-text .intro-lead-in {
   }
   table {
     font-size: 10px;
+    max-width: 360px; 
   }
 }
 
