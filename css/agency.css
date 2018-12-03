@@ -312,10 +312,11 @@ header.masthead .intro-text .intro-lead-in {
 @media only screen and (max-width: 768px) {
   div {
     font-size: 10px;
+    max-width: 360px;
   }
   table {
     font-size: 10px;
-    max-width: 360px; 
+    max-width: 360px;
   }
 }
 
